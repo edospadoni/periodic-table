@@ -1,12 +1,29 @@
-# periodic-table
+# TravelMap UI
 
-This project is generated with [yo angular generator](https://github.com/yeoman/generator-angular)
-version 0.16.0.
+### Description
+This is a sample AngularJS application for the Periodic Table of Elements.
 
-## Build & development
+### Demo
+[Example]
 
-Run `grunt` for building and `grunt serve` for preview.
+### Build
+Install `bower` and `grunt`
 
-## Testing
+`npm install -g grunt bower`
 
-Running `grunt test` will run the unit tests with karma.
+
+Install the JavaScript dependecies (`node_modules` and `bower_components`)
+
+`npm install && bower install`
+
+### Use
+Launch the application
+
+`grunt serve`
+
+### Deploy
+Compress the application for production
+
+`grunt build`
+
+[Example]:https://edospadoni.github.io/periodic-table/#!/
