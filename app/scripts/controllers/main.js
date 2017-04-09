@@ -36,7 +36,7 @@ angular.module('periodicTableApp')
     $scope.openDetailModal = function (e) {
       $scope.currentElement = e;
       // Get the modal
-      var modal = document.getElementById('myModal');
+      var modal = document.getElementById('elemModal');
 
       // Get the <span> element that closes the modal
       var span = document.getElementsByClassName("close")[0];
