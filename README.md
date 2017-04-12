@@ -26,4 +26,9 @@ Compress the application for production
 
 `grunt build`
 
+
+### Credits
+Thanks to [Bowserinator] for JSON data of elements
+
 [Example]:https://edospadoni.github.io/periodic-table/#!/
+[Bowserinator]:https://github.com/Bowserinator/Periodic-Table-JSON
