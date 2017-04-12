@@ -1,62 +1,62 @@
 <div class="inner">
-  <div class="table" style="width: {{tableWidth}}px; height: {{tableHeight}}px">
+  <div class="table {{isModalOpen ? 'blurred' : ''}}" style="width: {{tableWidth}}px; height: {{tableHeight}}px">
     <div class="column" ng-repeat="c in getTimes(18) track by $index" style="line-height: {{elemMargin}}px; width: {{elemSize}}px; height: {{elemMargin}}px; top: 0px; left: {{elementPos($index)}}px">
       {{$index+1}}
     </div>
     <div class="row" ng-repeat="c in getTimes(10) track by $index" style="line-height: {{elemSize}}px; width: {{elemMargin}}px; height: {{elemSize}}px; top: {{elementPos($index)}}px; left: 0px">
       {{$index > 7 ? $index : $index == 7 ? '' : $index+1}}
     </div>
-    <div ng-click="openDetailModal(e)" ng-repeat="e in elements" class="element {{getCategory(e.category)}}" style="width: {{elemSize}}px; height: {{elemSize}}px; left: {{elementPos(e.xpos-1)}}px; top: {{elementPos(e.ypos-1)}}px">
+    <div ng-click="e.action ? e.action() : openDetailModal(e)" ng-repeat="e in elements" class="element {{getCategory(e.category)}}" style="width: {{elemSize}}px; height: {{elemSize}}px; left: {{elementPos(e.xpos-1)}}px; top: {{elementPos(e.ypos-1)}}px">
       <div class="atomic">{{e.number}}</div>
       <p>{{e.symbol}}</p>
       <div class="description">{{e.name}}</div>
     </div>
-    <div id="elemModal" class="modal">
-      <!-- Modal content -->
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <h1>{{currentElement.name}}</h1>
-        <div class="detail inline-main">
-          <h5>Symbol</h5>
-          <h4>{{currentElement.symbol || 'Unknown'}}</h4>
-        </div>
-        <div class="detail inline-main">
-          <h5>Number</h5>
-          <h4>{{currentElement.number || 'Unknown'}}</h4>
-        </div>
-        <p class="summary">{{currentElement.summary}}</p>
-        <div class="detail">
-          <h5>Discovery</h5>
-          <h4>{{currentElement.discovered_by || 'Unknown'}}</h4>
-        </div>
-        <div class="detail inline">
-          <h5>Appearance</h5>
-          <h4>{{currentElement.appearance || 'Unknown'}}</h4>
-        </div>
-        <div class="detail inline">
-          <h5>Category</h5>
-          <h4>{{currentElement.category || 'Unknown'}}</h4>
-        </div>
-        <div class="detail inline">
-          <h5>Phase</h5>
-          <h4>{{currentElement.phase || 'Unknown'}}</h4>
-        </div>
-        <div class="detail inline-info">
-          <h5>Atomic Mass (u)</h5>
-          <h4>{{currentElement.atomic_mass || 'Unknown'}}</h4>
-        </div>
-        <div class="detail inline-info">
-          <h5>Density (g/L)</h5>
-          <h4>{{currentElement.density || 'Unknown'}}</h4>
-        </div>
-        <div class="detail inline-info">
-          <h5>Boiling Point (K)</h5>
-          <h4>{{currentElement.boil || 'Unknown'}}</h4>
-        </div>
-        <div class="detail inline-info">
-          <h5>Melting Point (K)</h5>
-          <h4>{{currentElement.melt || 'Unknown'}}</h4>
-        </div>
+  </div>
+  <div id="elemModal" class="modal">
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h1>{{currentElement.name}}</h1>
+      <div class="detail inline-main">
+        <h5>Symbol</h5>
+        <h4>{{currentElement.symbol || 'Unknown'}}</h4>
+      </div>
+      <div class="detail inline-main">
+        <h5>Number</h5>
+        <h4>{{currentElement.number || 'Unknown'}}</h4>
+      </div>
+      <p class="summary">{{currentElement.summary}}</p>
+      <div class="detail">
+        <h5>Discovery</h5>
+        <h4>{{currentElement.discovered_by || 'Unknown'}}</h4>
+      </div>
+      <div class="detail inline">
+        <h5>Appearance</h5>
+        <h4>{{currentElement.appearance || 'Unknown'}}</h4>
+      </div>
+      <div class="detail inline">
+        <h5>Category</h5>
+        <h4>{{currentElement.category || 'Unknown'}}</h4>
+      </div>
+      <div class="detail inline">
+        <h5>Phase</h5>
+        <h4>{{currentElement.phase || 'Unknown'}}</h4>
+      </div>
+      <div class="detail inline-info">
+        <h5>Atomic Mass (u)</h5>
+        <h4>{{currentElement.atomic_mass || 'Unknown'}}</h4>
+      </div>
+      <div class="detail inline-info">
+        <h5>Density (g/L)</h5>
+        <h4>{{currentElement.density || 'Unknown'}}</h4>
+      </div>
+      <div class="detail inline-info">
+        <h5>Boiling Point (K)</h5>
+        <h4>{{currentElement.boil || 'Unknown'}}</h4>
+      </div>
+      <div class="detail inline-info">
+        <h5>Melting Point (K)</h5>
+        <h4>{{currentElement.melt || 'Unknown'}}</h4>
       </div>
     </div>
   </div>
