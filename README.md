@@ -1,4 +1,4 @@
-# TravelMap UI
+# Periodic Table of Elements
 
 ### Description
 This is a sample AngularJS application for the Periodic Table of Elements.

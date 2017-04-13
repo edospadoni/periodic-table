@@ -11,8 +11,6 @@ body {
   background: #222;
 }
 
-.table {}
-
 .element {
   position: absolute;
   display: inline-block;
@@ -213,9 +211,6 @@ h2 {
   background: #757D75;
 }
 
-
-/* The Modal (background) */
-
 .modal {
   display: none;
   position: fixed;
@@ -229,21 +224,13 @@ h2 {
   background-color: rgba(0, 0, 0, 0.4);
 }
 
-
-/* Modal Content/Box */
-
 .modal-content {
   background: #fefefe;
   margin: 5% auto;
-  /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
-  /* Could be more or less, depending on screen size */
 }
-
-
-/* The Close Button */
 
 .close {
   color: #aaa;
